@@ -1,3 +1,34 @@
+# Project Notes
+
+Reacts - Cleaning up a React project
+
+1. delete /src folder
+2. recreate /src folder
+3. create an /src/index.js file
+   1. import React from 'react'
+   2. import ReactDOM from 'react-dom'
+   3. import App from './App'
+   4. ReactDom.render(<App />, document.getElementById('root'))
+4. in the public folder, delete all files except index.html
+5. create an /src/App.js file. Initialise it then run npm start to run the react app.
+
+```jsx
+{/* to reset the margins and padding use CssBaseline first */}
+            <CssBaseline />
+            <Header />
+            {/* here we have a grid of type container with a spacing of 3 and 100% width inline style */}
+            <Grid container spacing={3} style={{ width: '100%' }}>
+                {/* inside this we will have one more grid of type item and it will take all 12 spaces(full width) on mobile devices but on medium devices or larger, it will takes 4 spaces */}
+                <Grid item xs={12} md={4}>
+                    <List />
+                </Grid>
+                {/* the map is going to take 8 spaces on medium or larger devices */}
+                <Grid item xs={12} md={8}>
+                    <Map />
+                </Grid>
+            </Grid>
+```
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
