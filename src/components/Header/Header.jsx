@@ -10,7 +10,7 @@ const Header = () => {
 		<AppBar position='static'>
 			<Toolbar className={classes.toolbar}>
 				<Typography variant='h5' className={classes.title}>
-					Travel Advisor
+					Travel Snippets
 				</Typography>
 				<Box display='flex'>
 					<Typography variant='h6' className={classes.title}>
