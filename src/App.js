@@ -20,14 +20,15 @@ const App = () => {
 	}, []);
 
 	useEffect(() => {
-		console.log(coordinates, bounds);
+		// console.log(coordinates, bounds);
 		// at the end of the function, we have to have a dependency
 		// if the array is left empty, it means this code will only run only at the start of the application
-		getPlacesData().then((data) => {
-			console.log(data);
+		getPlacesData(bounds.sw, bounds.ne).then((data) => {
+			// console.log(data);
 			setPlaces(data);
 		});
 	}, [coordinates, bounds]);
+
 	return (
 		<>
 			{/* to reset the margins and padding use CssBaseline first */}
@@ -37,7 +38,7 @@ const App = () => {
 			<Grid container spacing={3} style={{ width: '100%' }}>
 				{/* inside this we will have one more grid of type item and it will take all 12 spaces(full width) on mobile devices but on medium devices or larger, it will taks 4 spaces */}
 				<Grid item xs={12} md={4}>
-					<List />
+					<List places={places} />
 				</Grid>
 				{/* the map is going to take 8 spaces on medium or larger devices */}
 				<Grid item xs={12} md={8}>
